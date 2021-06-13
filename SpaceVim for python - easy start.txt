@@ -1,0 +1,54 @@
+########################################################
+### SPACEVIM AS IDE FOR THE PERFECT WORK WITH PYTHON ###
+########################################################
+
+0) you should install python (I recommend you ver 3.8 or later) 
+1) 
+>> sudo apt install python-is-python3
+2.0) apt-get install neovim
+2.1) install space vim to manual there:
+https://spacevim.org/quick-start-guide/
+3) install libraries from there:
+https://spacevim.org/layers/lang/python/
+4) move init.toml to .SpaceVim.d/init.toml
+5) make compile files, if the error has started
+>> git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/vimproc.vim
+>> cd ~/.vim/bundle/vimproc.vim
+>> make
+
+notes:
+0) You have the two folders in /home/<user_name>/ are .SpaceVim and .SpaceVim.d, its ok.
+
+1) Probably you should correct .SpaceVim/autoload/SpaceVim.vim
+- You must uncomment the lines (10 line is start):
+if has('python3')
+  let g:spacevim_autocomplete_method = 'deoplete'
+elseif has('lua')
+  let g:spacevim_autocomplete_method = 'neocomplete'
+elseif has('python')
+  let g:spacevim_autocomplete_method = 'completor'
+elseif has('timers')
+  let g:spacevim_autocomplete_method = 'asyncomplete'
+else
+  let g:spacevim_autocomplete_method = 'neocomplcache'
+endif
+
+- You must add the lines:
+let g:PYTHON_HOST_PROG='/usr/bin/python3'
+let g:PYTHON3_HOST_PROG='/usr/bin/python3'
+let g:deoplete#enable_at_startup = 1
+
+
+2) Probably you should correct .SpaceVim/init.vim
+execute 'source' fnamemodify(expand('<sfile>'), ':h').'/main.vim'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3.8'
+let g:loaded_python_provider = 1
+let g:spacevim_enable_guicolors = 0
+" let g:jedi#force_py_version = 3
+" set the virtual env python used to launch the debugger
+let g:pudb_python = '/usr/bin/python3.8'
+" set the entry point (script) to use for pudb
+let g:pudb_entry_point = '~/src/poweruser_tools/test/test_templates.py'
+" Unicode symbols work fine (nvim, iterm, tmux, nyovim tested)
+let g:pudb_breakpoint_symbol='☠'

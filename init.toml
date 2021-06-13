@@ -1,0 +1,122 @@
+#=============================================================================
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
+    colorscheme = "gruvbox"
+    colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors
+    enable_guicolors = true 
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    guifont = "mononoki Nerd Font:h11"
+     statusline_separator = "arrow"
+     statusline_iseparator = "arrow"
+    buffer_index_type = 4
+    # windows_index_type = 3
+    enable_tabline_filetype_icon = true 
+    enable_statusline_mode = false
+    statusline_unicode_symbols = false
+    # Enable vim compatible mode, avoid changing origin vim key bindings
+    vimcompatible = true
+
+#=============================================================================
+# PYTHON LAYER
+#=============================================================================
+[[layers]]
+name = 'lang#python'
+python_file_head = [
+    '#!/usr/bin/python3.8',
+    '# -*- coding: utf-8 -*-',
+    '',
+    ''
+]  
+
+[[layers]]
+name = "lang#python"
+enable_typeinfo = true
+format_on_save = true
+python_interpreter = '/usr/bin/python3.8'
+enabled_linters = ['python', 'pylint']
+#=============================================================================
+# USED LAYERS
+#=============================================================================
+[[layers]]
+name = "debug"
+
+# Enable autocomplete layer
+[[layers]]
+name = 'autocomplete'
+auto_completion_return_key_behavior = "complete"
+auto_completion_tab_key_behavior = "smart"
+
+[[layers]]
+name = 'shell'
+default_position = 'bottom'
+default_height = 30
+
+[[layers]]
+name = "core#statusline"
+enable = false
+#=============================================================================
+# CUSTOM PLUGINS
+#=============================================================================
+[[custom_plugins]]
+    repo = "https://github.com/vim-airline/vim-airline"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/vim-airline/vim-airline-themes"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/frazrepo/vim-rainbow"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/evturn/cosmic-barf"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/liuchengxu/space-vim-dark"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/dbeniamine/cheat.sh-vim"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/justinmk/vim-sneak"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/tpope/vim-fugitive"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/kien/ctrlp.vim"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/vifm/vifm.vim"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/airblade/vim-gitgutter"
+    merged = 0
+[[custom_plugins]]
+    repo = "https://github.com/ojroques/vim-scrollstatus"
+    merged = 0
+[[custom_plugins]]   
+    repo = "https://github.com/jaxbot/semantic-highlight.vim"
+    merged = 0
+[[custom_plugins]]   
+    repo = "https://github.com/Shougo/vimproc.vim"
+    merged = 0
+[[custom_plugins]] 
+    repo = "https://github.com/idanarye/vim-vebugger"
+    merged = 0
+[[custom_plugins]] 
+    repo = "https://github.com/jeetsukumaran/vim-pythonsense"
+    merged = 0
+[[custom_plugins]] 
+    repo = "https://github.com/davidhalter/jedi-vim"
+    merged = 0
+
+#=============================================================================
